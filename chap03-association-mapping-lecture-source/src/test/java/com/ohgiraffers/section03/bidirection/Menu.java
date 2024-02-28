@@ -1,17 +1,29 @@
-package com.ohgiraffers.section01.problem;
+package com.ohgiraffers.section03.bidirection;
 
-public class MenuAndCategory {
+import jakarta.persistence.*;
 
+@Entity(name="bidirection_menu")
+@Table(name="tbl_menu")
+public class Menu {
+
+    @Id
+    @Column(name="menu_code")
     private int menuCode;
+    @Column(name="menu_name")
     private String menuName;
+    @Column(name="menu_price")
     private int menuPrice;
+
+    @JoinColumn(name="category_code")
+    @ManyToOne
     private Category category;
+    @Column(name="orderable_status")
     private String orderableStatus;
 
-    public MenuAndCategory() {
-    }
+    public Menu() {}
 
-    public MenuAndCategory(int menuCode, String menuName, int menuPrice, Category category, String orderableStatus) {
+    public Menu(int menuCode, String menuName, int menuPrice, Category category, String orderableStatus) {
+        super();
         this.menuCode = menuCode;
         this.menuName = menuName;
         this.menuPrice = menuPrice;
@@ -61,12 +73,8 @@ public class MenuAndCategory {
 
     @Override
     public String toString() {
-        return "MenuAndCategory{" +
-                "menuCode=" + menuCode +
-                ", menuName='" + menuName + '\'' +
-                ", menuPrice=" + menuPrice +
-                ", category=" + category +
-                ", orderableStatus='" + orderableStatus + '\'' +
-                '}';
+        return "Menu [menuCode=" + menuCode + ", menuName=" + menuName + ", menuPrice=" + menuPrice + ", category="
+                + category + ", orderableStatus=" + orderableStatus + "]";
     }
+
 }
