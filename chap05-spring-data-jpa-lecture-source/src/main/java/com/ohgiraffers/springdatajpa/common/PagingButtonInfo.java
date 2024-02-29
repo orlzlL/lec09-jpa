@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.stereotype.Service;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,7 +12,8 @@ import org.springframework.stereotype.Service;
 public class PagingButtonInfo {
 
     private int currentPage;
-    private int startPage;
-    private int endPage;
 
+    private int startPage;
+
+    private int endPage;
 }

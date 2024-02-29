@@ -13,7 +13,7 @@ public class Chap05SpringDataJpaLectureSourceApplication {
     }
 
     @Bean
-    public ModelMapper modelMapper(){
+    public ModelMapper modelMapper() {
         return new ModelMapper();
     }
 
